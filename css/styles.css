@@ -1,3 +1,4 @@
+@import url('./comments/comments.css');
 #wrapper{
 	
 	width: 500px;
@@ -6,7 +7,24 @@
 	
 	text-align: justify;
 }
+.container-image{
+	width: 100px;
+	height: 100px;
+box-sizing: content-box;
+overflow: hidden;
+}
 
+
+
+
+
+
+.image{
+	max-width:  50px;
+	min-height: 50px;
+	border-radius: 50%;
+	margin-bottom: 20px;
+}
 #wrapper p{
 	margin-bottom: 5px;
 }
@@ -17,6 +35,11 @@
 	
 	font-weight: bold;
 	margin-right: 10px;
+}
+.text{
+	width: 200px;
+	display: flex;
+	flex-wrap: wrap;
 }
 .name{
 	font-size: 12pt;

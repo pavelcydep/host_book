@@ -5,9 +5,12 @@
 
 		<meta charset="utf-8">  
 		<title>Гостевая книга</title>
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
 		<link rel="stylesheet" href="css/bootstrap/css/bootstrap.css">
 		<link rel="stylesheet" href="./css/styles.css">
-		
+		<?php
+		include("bd.php");
+		?>
 	</head>
 	<body>
 <div id="wrapper">
@@ -20,17 +23,16 @@ comment($data);
 </div>	
 		
 <div id="form">
-				<form action="/form.php" method="POST">
+				<form action="/form.php" method="POST"  enctype='multipart/form-data'>
 					<p><input class="form-control" name="userName" placeholder="Ваше имя"></p>
 					<p><textarea class="form-control" name="comment" placeholder="Ваш отзыв"></textarea></p>
-					<p><input type="submit"  class="btn btn-info btn-block" value="Сохранить"></p>
-				</form>
+					Выберите файл:<input type='file' class="form-control" name='filename' size='10' /><br /><br />
+					<button type="submit" name="upload" class="btn btn-primary">Добавить комментарий</button>
+				
+	
+	</form>
 			</div>
 		</div>
-
-
-
-
 
 </body>
 </html>
