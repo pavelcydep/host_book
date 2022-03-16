@@ -17,8 +17,12 @@
 			<h1>Гостевая книга</h1>
 			<div class="note">
 <?php 
-include("comment.php");
-comment($data);
+require("./Comment.php");
+require('./DB.php');
+$db = new DB;
+$result = $db->getAll('comments');
+$comment= new Comment($result);
+$comment->render();
 ?>
 </div>	
 		
@@ -27,7 +31,7 @@ comment($data);
 					<p><input class="form-control" name="userName" placeholder="Ваше имя"></p>
 					<p><textarea class="form-control" name="comment" placeholder="Ваш отзыв"></textarea></p>
 					Выберите файл:<input type='file' class="form-control" name='filename' size='10' /><br /><br />
-					<button type="submit" name="upload" class="btn btn-primary">Добавить комментарий</button>
+					<button type="submit" name="upload" class="btn btn-primary">Добавить3 комментарий</button>
 				
 	
 	</form>
