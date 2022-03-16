@@ -9,7 +9,7 @@
 		<link rel="stylesheet" href="css/bootstrap/css/bootstrap.css">
 		<link rel="stylesheet" href="./css/styles.css">
 		<?php
-		include("bd.php");
+		
 		?>
 	</head>
 	<body>
@@ -17,8 +17,13 @@
 			<h1>Гостевая книга</h1>
 			<div class="note">
 <?php 
-include("comment.php");
-comment($data);
+require('./DB.php');
+require("./Comment.php");
+
+$db = new DB;
+$result = $db->getAll('comments');
+$comment= new Comment();
+$comment->render($result);
 ?>
 </div>	
 		
@@ -27,7 +32,7 @@ comment($data);
 					<p><input class="form-control" name="userName" placeholder="Ваше имя"></p>
 					<p><textarea class="form-control" name="comment" placeholder="Ваш отзыв"></textarea></p>
 					Выберите файл:<input type='file' class="form-control" name='filename' size='10' /><br /><br />
-					<button type="submit" name="upload" class="btn btn-primary">Добавить комментарий</button>
+					<button type="submit" name="upload" class="btn btn-primary">Добавить3 комментарий</button>
 				
 	
 	</form>
