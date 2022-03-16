@@ -9,7 +9,7 @@
 		<link rel="stylesheet" href="css/bootstrap/css/bootstrap.css">
 		<link rel="stylesheet" href="./css/styles.css">
 		<?php
-		include("bd.php");
+		
 		?>
 	</head>
 	<body>
@@ -17,12 +17,13 @@
 			<h1>Гостевая книга</h1>
 			<div class="note">
 <?php 
-require("./Comment.php");
 require('./DB.php');
+require("./Comment.php");
+
 $db = new DB;
 $result = $db->getAll('comments');
-$comment= new Comment($result);
-$comment->render();
+$comment= new Comment();
+$comment->render($result);
 ?>
 </div>	
 		
